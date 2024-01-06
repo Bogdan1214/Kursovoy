@@ -1,10 +1,9 @@
-#define _CRT_SECURE_NO_DEPRECATE
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
 
 // Определение структуры
-typedef struct {
+typedef struct{
     float length;
     float width;
     float height;
@@ -53,29 +52,29 @@ int main() {
         scanf("%d", &choice);
 
         switch (choice) {
-        case 1:
-            inputData(&facade);
-            break;
-        case 2:
-            calculatePlasterRequired(&facade);
-            printResults(&facade);
-            break;
-        case 3:
-            saveToFile(&facade);
-            printf("Данные успешно сохранены в файл\n");
-            break;
-        case 4:
-            if (readFromFile(&facade))
-                printf("Данные успешно считаны из файла\n");
-            else
-                printf("Ошибка при считывании данных из файла\n");
-            break;
-        case 5:
-            printf("Выход из программы\n");
-            break;
-        default:
-            printf("Неверный пункт меню\n");
-            break;
+            case 1:
+                inputData(&facade);
+                break;
+            case 2:
+                calculatePlasterRequired(&facade);
+                printResults(&facade);
+                break;
+            case 3:
+                saveToFile(&facade);
+                printf("Данные успешно сохранены в файл\n");
+                break;
+            case 4:
+                if (readFromFile(&facade))
+                    printf("Данные успешно считаны из файла\n");
+                else
+                    printf("Ошибка при считывании данных из файла\n");
+                break;
+            case 5:
+                printf("Выход из программы\n");
+                break;
+            default:
+                printf("Неверный пункт меню\n");
+                break;
         }
         printf("\n");
 
@@ -164,16 +163,16 @@ int readFromFile(Facade* facade) {
         return 0;
     }
 
-    if (fscanf(file, "Длина фасада: %f м\n", &facade->length) != 1) return 0;
-    if (fscanf(file, "Ширина фасада: %f м\n", &facade->width) != 1) return 0;
-    if (fscanf(file, "Высота фасада: %f м\n", &facade->height) != 1) return 0;
-    if (fscanf(file, "Площадь окон: %f м^2\n", &facade->windowArea) != 1) return 0;
-    if (fscanf(file, "Площадь дверей: %f м^2\n", &facade->doorArea) != 1) return 0;
-    if (fscanf(file, "Расход штукатурки на метр квадратный: %f кг/м^2\n", &facade->plasterRate) != 1) return 0;
-    if (fscanf(file, "Общая площадь фасада: %f м^2\n", &facade->facadeArea) != 1) return 0;
-    if (fscanf(file, "Необходимое количество штукатурки в мешках: %f мешков\n", &facade->plasterBags) != 1) return 0;
-    if (fscanf(file, "Необходимое количество штукатурки в литрах: %f л\n", &facade->plasterLiters) != 1) return 0;
-    if (fscanf(file, "Необходимое количество штукатурки в килограммах: %f кг\n", &facade->plasterKilograms) != 1) return 0;
+    if(fscanf(file, "Длина фасада: %f м\n", &facade->length) != 1) return 0;
+    if(fscanf(file, "Ширина фасада: %f м\n", &facade->width) != 1) return 0;
+    if(fscanf(file, "Высота фасада: %f м\n", &facade->height) != 1) return 0;
+    if(fscanf(file, "Площадь окон: %f м^2\n", &facade->windowArea) != 1) return 0;
+    if(fscanf(file, "Площадь дверей: %f м^2\n", &facade->doorArea) != 1) return 0;
+    if(fscanf(file, "Расход штукатурки на метр квадратный: %f кг/м^2\n", &facade->plasterRate) != 1) return 0;
+    if(fscanf(file, "Общая площадь фасада: %f м^2\n", &facade->facadeArea) != 1) return 0;
+    if(fscanf(file, "Необходимое количество штукатурки в мешках: %f мешков\n", &facade->plasterBags) != 1) return 0;
+    if(fscanf(file, "Необходимое количество штукатурки в литрах: %f л\n", &facade->plasterLiters) != 1) return 0;
+    if(fscanf(file, "Необходимое количество штукатурки в килограммах: %f кг\n", &facade->plasterKilograms) != 1) return 0;
 
     fclose(file);
     return 1;
