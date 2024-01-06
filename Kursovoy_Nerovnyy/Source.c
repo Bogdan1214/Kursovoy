@@ -1,9 +1,9 @@
-#define _CRT_SECURE_NO_DEPRECATE
+ï»¿#define _CRT_SECURE_NO_DEPRECATE
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
 
-// Îïðåäåëåíèå ñòðóêòóðû
+// ÐžÐ¿Ñ€ÐµÐ´ÐµÐ»ÐµÐ½Ð¸Ðµ ÑÑ‚Ñ€ÑƒÐºÑ‚ÑƒÑ€Ñ‹
 typedef struct{
     float length;
     float width;
@@ -17,22 +17,22 @@ typedef struct{
     float plasterKilograms;
 } Facade;
 
-// Ôóíêöèÿ äëÿ ââîäà äàííûõ îò ïîëüçîâàòåëÿ
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ð²Ð²Ð¾Ð´Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¾Ñ‚ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ
 void inputData(Facade* facade);
 
-// Ôóíêöèÿ äëÿ ðàñ÷åòà ïëîùàäè ôàñàäà áåç ïðîåìîâ
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ñ€Ð°ÑÑ‡ÐµÑ‚Ð° Ð¿Ð»Ð¾Ñ‰Ð°Ð´Ð¸ Ñ„Ð°ÑÐ°Ð´Ð° Ð±ÐµÐ· Ð¿Ñ€Ð¾ÐµÐ¼Ð¾Ð²
 float calculateNetFacadeArea(Facade* facade);
 
-// Ôóíêöèÿ äëÿ ðàñ÷åòà íåîáõîäèìîãî êîëè÷åñòâà øòóêàòóðêè
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ñ€Ð°ÑÑ‡ÐµÑ‚Ð° Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ð³Ð¾ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸
 void calculatePlasterRequired(Facade* facade);
 
-// Ôóíêöèÿ äëÿ âûâîäà ðåçóëüòàòîâ
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ð²Ñ‹Ð²Ð¾Ð´Ð° Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð¾Ð²
 void printResults(Facade* facade);
 
-// Ôóíêöèÿ äëÿ ñîõðàíåíèÿ äàííûõ â ôàéë
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð² Ñ„Ð°Ð¹Ð»
 void saveToFile(Facade* facade);
 
-// Ôóíêöèÿ äëÿ ñ÷èòûâàíèÿ äàííûõ èç ôàéëà
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð½Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°
 int readFromFile(Facade* facade);
 
 int main() {
@@ -42,14 +42,14 @@ int main() {
 
     int choice;
     do {
-        // Âûâîä ìåíþ
-        printf("Ìåíþ:\n");
-        printf("1. Ââîä äàííûõ\n");
-        printf("2. Ðàñ÷åò ðåçóëüòàòîâ\n");
-        printf("3. Ñîõðàíèòü äàííûå â ôàéë\n");
-        printf("4. Ñ÷èòàòü äàííûå èç ôàéëà\n");
-        printf("5. Âûõîä\n");
-        printf("Âûáåðèòå ïóíêò ìåíþ: ");
+        // Ð’Ñ‹Ð²Ð¾Ð´ Ð¼ÐµÐ½ÑŽ
+        printf("ÐœÐµÐ½ÑŽ:\n");
+        printf("1. Ð’Ð²Ð¾Ð´ Ð´Ð°Ð½Ð½Ñ‹Ñ…\n");
+        printf("2. Ð Ð°ÑÑ‡ÐµÑ‚ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð¾Ð²\n");
+        printf("3. Ð¡Ð¾Ñ…Ñ€Ð°Ð½Ð¸Ñ‚ÑŒ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð² Ñ„Ð°Ð¹Ð»\n");
+        printf("4. Ð¡Ñ‡Ð¸Ñ‚Ð°Ñ‚ÑŒ Ð´Ð°Ð½Ð½Ñ‹Ðµ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°\n");
+        printf("5. Ð’Ñ‹Ñ…Ð¾Ð´\n");
+        printf("Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¿ÑƒÐ½ÐºÑ‚ Ð¼ÐµÐ½ÑŽ: ");
         scanf("%d", &choice);
 
         switch (choice) {
@@ -62,19 +62,19 @@ int main() {
                 break;
             case 3:
                 saveToFile(&facade);
-                printf("Äàííûå óñïåøíî ñîõðàíåíû â ôàéë\n");
+                printf("Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ñ‹ Ð² Ñ„Ð°Ð¹Ð»\n");
                 break;
             case 4:
                 if (readFromFile(&facade))
-                    printf("Äàííûå óñïåøíî ñ÷èòàíû èç ôàéëà\n");
+                    printf("Ð”Ð°Ð½Ð½Ñ‹Ðµ ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÑ‡Ð¸Ñ‚Ð°Ð½Ñ‹ Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°\n");
                 else
-                    printf("Îøèáêà ïðè ñ÷èòûâàíèè äàííûõ èç ôàéëà\n");
+                    printf("ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð½Ð¸Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°\n");
                 break;
             case 5:
-                printf("Âûõîä èç ïðîãðàììû\n");
+                printf("Ð’Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹\n");
                 break;
             default:
-                printf("Íåâåðíûé ïóíêò ìåíþ\n");
+                printf("ÐÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ð¿ÑƒÐ½ÐºÑ‚ Ð¼ÐµÐ½ÑŽ\n");
                 break;
         }
         printf("\n");
@@ -84,96 +84,96 @@ int main() {
     return 0;
 }
 
-// Ôóíêöèÿ äëÿ ââîäà äàííûõ îò ïîëüçîâàòåëÿ
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ð²Ð²Ð¾Ð´Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¾Ñ‚ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ
 void inputData(Facade* facade) {
-    printf("Ââåäèòå äëèíó ôàñàäà (ì): ");
+    printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´Ð»Ð¸Ð½Ñƒ Ñ„Ð°ÑÐ°Ð´Ð° (Ð¼): ");
     scanf("%f", &facade->length);
 
-    printf("Ââåäèòå øèðèíó ôàñàäà (ì): ");
+    printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑˆÐ¸Ñ€Ð¸Ð½Ñƒ Ñ„Ð°ÑÐ°Ð´Ð° (Ð¼): ");
     scanf("%f", &facade->width);
 
-    printf("Ââåäèòå âûñîòó ôàñàäà (ì): ");
+    printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²Ñ‹ÑÐ¾Ñ‚Ñƒ Ñ„Ð°ÑÐ°Ð´Ð° (Ð¼): ");
     scanf("%f", &facade->height);
 
-    printf("Ââåäèòå ïëîùàäü îêîí (ì^2): ");
+    printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð»Ð¾Ñ‰Ð°Ð´ÑŒ Ð¾ÐºÐ¾Ð½ (Ð¼^2): ");
     scanf("%f", &facade->windowArea);
 
-    printf("Ââåäèòå ïëîùàäü äâåðåé (ì^2): ");
+    printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð»Ð¾Ñ‰Ð°Ð´ÑŒ Ð´Ð²ÐµÑ€ÐµÐ¹ (Ð¼^2): ");
     scanf("%f", &facade->doorArea);
 
-    printf("Ââåäèòå ðàñõîä øòóêàòóðêè íà ìåòð êâàäðàòíûé (êã/ì^2): ");
+    printf("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ€Ð°ÑÑ…Ð¾Ð´ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð½Ð° Ð¼ÐµÑ‚Ñ€ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð½Ñ‹Ð¹ (ÐºÐ³/Ð¼^2): ");
     scanf("%f", &facade->plasterRate);
 }
 
-// Ôóíêöèÿ äëÿ ðàñ÷åòà ïëîùàäè ôàñàäà áåç ïðîåìîâ
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ñ€Ð°ÑÑ‡ÐµÑ‚Ð° Ð¿Ð»Ð¾Ñ‰Ð°Ð´Ð¸ Ñ„Ð°ÑÐ°Ð´Ð° Ð±ÐµÐ· Ð¿Ñ€Ð¾ÐµÐ¼Ð¾Ð²
 float calculateNetFacadeArea(Facade* facade) {
     facade->facadeArea = 2 * (facade->length + facade->width) * facade->height;
     return facade->facadeArea - facade->windowArea - facade->doorArea;
 }
 
-// Ôóíêöèÿ äëÿ ðàñ÷åòà íåîáõîäèìîãî êîëè÷åñòâà øòóêàòóðêè
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ñ€Ð°ÑÑ‡ÐµÑ‚Ð° Ð½ÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ð³Ð¾ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð° ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸
 void calculatePlasterRequired(Facade* facade) {
     float netFacadeArea = calculateNetFacadeArea(facade);
 
-    // Ïðåäïîëîæèì, ÷òî äëÿ êàæäîãî ìåøêà øòóêàòóðêè òðåáóåòñÿ 25 êã
+    // ÐŸÑ€ÐµÐ´Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ð¼, Ñ‡Ñ‚Ð¾ Ð´Ð»Ñ ÐºÐ°Ð¶Ð´Ð¾Ð³Ð¾ Ð¼ÐµÑˆÐºÐ° ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ñ‚Ñ€ÐµÐ±ÑƒÐµÑ‚ÑÑ 25 ÐºÐ³
     facade->plasterBags = netFacadeArea * facade->plasterRate / 25;
 
-    // Ïðåäïîëîæèì, ÷òî êàæäûé ëèòð øòóêàòóðêè ýêâèâàëåíòåí 1 êã
+    // ÐŸÑ€ÐµÐ´Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ð¼, Ñ‡Ñ‚Ð¾ ÐºÐ°Ð¶Ð´Ñ‹Ð¹ Ð»Ð¸Ñ‚Ñ€ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ ÑÐºÐ²Ð¸Ð²Ð°Ð»ÐµÐ½Ñ‚ÐµÐ½ 1 ÐºÐ³
     facade->plasterLiters = netFacadeArea * facade->plasterRate;
 
-    // Êîëè÷åñòâî øòóêàòóðêè â êèëîãðàììàõ ðàâíî êîëè÷åñòâó ìåøêîâ * 25
+    // ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð² ÐºÐ¸Ð»Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð°Ñ… Ñ€Ð°Ð²Ð½Ð¾ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ñƒ Ð¼ÐµÑˆÐºÐ¾Ð² * 25
     facade->plasterKilograms = facade->plasterBags * 25;
 }
 
-// Ôóíêöèÿ äëÿ âûâîäà ðåçóëüòàòîâ
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ Ð²Ñ‹Ð²Ð¾Ð´Ð° Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ð¾Ð²
 void printResults(Facade* facade) {
-    printf("Îáùàÿ ïëîùàäü ôàñàäà: %.2f ì^2\n", facade->facadeArea);
-    printf("Ïëîùàäü ôàñàäà áåç ïðîåìîâ: %.2f ì^2\n", calculateNetFacadeArea(facade));
-    printf("Íåîáõîäèìîå êîëè÷åñòâî øòóêàòóðêè â ìåøêàõ: %.2f ìåøêîâ\n", facade->plasterBags);
-    printf("Íåîáõîäèìîå êîëè÷åñòâî øòóêàòóðêè â ëèòðàõ: %.2f ë\n", facade->plasterLiters);
-    printf("Íåîáõîäèìîå êîëè÷åñòâî øòóêàòóðêè â êèëîãðàììàõ: %.2f êã\n", facade->plasterKilograms);
+    printf("ÐžÐ±Ñ‰Ð°Ñ Ð¿Ð»Ð¾Ñ‰Ð°Ð´ÑŒ Ñ„Ð°ÑÐ°Ð´Ð°: %.2f Ð¼^2\n", facade->facadeArea);
+    printf("ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ñ„Ð°ÑÐ°Ð´Ð° Ð±ÐµÐ· Ð¿Ñ€Ð¾ÐµÐ¼Ð¾Ð²: %.2f Ð¼^2\n", calculateNetFacadeArea(facade));
+    printf("ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð² Ð¼ÐµÑˆÐºÐ°Ñ…: %.2f Ð¼ÐµÑˆÐºÐ¾Ð²\n", facade->plasterBags);
+    printf("ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð² Ð»Ð¸Ñ‚Ñ€Ð°Ñ…: %.2f Ð»\n", facade->plasterLiters);
+    printf("ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð² ÐºÐ¸Ð»Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð°Ñ…: %.2f ÐºÐ³\n", facade->plasterKilograms);
 }
 
-// Ôóíêöèÿ äëÿ ñîõðàíåíèÿ äàííûõ â ôàéë
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ ÑÐ¾Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð² Ñ„Ð°Ð¹Ð»
 void saveToFile(Facade* facade) {
-    FILE* file = fopen("äàííûå.txt", "w");
+    FILE* file = fopen("Ð´Ð°Ð½Ð½Ñ‹Ðµ.txt", "w");
     if (file == NULL) {
-        printf("Îøèáêà ïðè îòêðûòèè ôàéëà!");
+        printf("ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð°!");
         return;
     }
 
-    fprintf(file, "Äëèíà ôàñàäà: %.2f ì\n", facade->length);
-    fprintf(file, "Øèðèíà ôàñàäà: %.2f ì\n", facade->width);
-    fprintf(file, "Âûñîòà ôàñàäà: %.2f ì\n", facade->height);
-    fprintf(file, "Ïëîùàäü îêîí: %.2f ì^2\n", facade->windowArea);
-    fprintf(file, "Ïëîùàäü äâåðåé: %.2f ì^2\n", facade->doorArea);
-    fprintf(file, "Ðàñõîä øòóêàòóðêè íà ìåòð êâàäðàòíûé: %.2f êã/ì^2\n", facade->plasterRate);
-    fprintf(file, "Îáùàÿ ïëîùàäü ôàñàäà: %.2f ì^2\n", facade->facadeArea);
-    fprintf(file, "Íåîáõîäèìîå êîëè÷åñòâî øòóêàòóðêè â ìåøêàõ: %.2f ìåøêîâ\n", facade->plasterBags);
-    fprintf(file, "Íåîáõîäèìîå êîëè÷åñòâî øòóêàòóðêè â ëèòðàõ: %.2f ë\n", facade->plasterLiters);
-    fprintf(file, "Íåîáõîäèìîå êîëè÷åñòâî øòóêàòóðêè â êèëîãðàììàõ: %.2f êã\n", facade->plasterKilograms);
+    fprintf(file, "Ð”Ð»Ð¸Ð½Ð° Ñ„Ð°ÑÐ°Ð´Ð°: %.2f Ð¼\n", facade->length);
+    fprintf(file, "Ð¨Ð¸Ñ€Ð¸Ð½Ð° Ñ„Ð°ÑÐ°Ð´Ð°: %.2f Ð¼\n", facade->width);
+    fprintf(file, "Ð’Ñ‹ÑÐ¾Ñ‚Ð° Ñ„Ð°ÑÐ°Ð´Ð°: %.2f Ð¼\n", facade->height);
+    fprintf(file, "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ð¾ÐºÐ¾Ð½: %.2f Ð¼^2\n", facade->windowArea);
+    fprintf(file, "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ð´Ð²ÐµÑ€ÐµÐ¹: %.2f Ð¼^2\n", facade->doorArea);
+    fprintf(file, "Ð Ð°ÑÑ…Ð¾Ð´ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð½Ð° Ð¼ÐµÑ‚Ñ€ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð½Ñ‹Ð¹: %.2f ÐºÐ³/Ð¼^2\n", facade->plasterRate);
+    fprintf(file, "ÐžÐ±Ñ‰Ð°Ñ Ð¿Ð»Ð¾Ñ‰Ð°Ð´ÑŒ Ñ„Ð°ÑÐ°Ð´Ð°: %.2f Ð¼^2\n", facade->facadeArea);
+    fprintf(file, "ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð² Ð¼ÐµÑˆÐºÐ°Ñ…: %.2f Ð¼ÐµÑˆÐºÐ¾Ð²\n", facade->plasterBags);
+    fprintf(file, "ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð² Ð»Ð¸Ñ‚Ñ€Ð°Ñ…: %.2f Ð»\n", facade->plasterLiters);
+    fprintf(file, "ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð² ÐºÐ¸Ð»Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð°Ñ…: %.2f ÐºÐ³\n", facade->plasterKilograms);
 
     fclose(file);
 }
 
-// Ôóíêöèÿ äëÿ ñ÷èòûâàíèÿ äàííûõ èç ôàéëà
+// Ð¤ÑƒÐ½ÐºÑ†Ð¸Ñ Ð´Ð»Ñ ÑÑ‡Ð¸Ñ‚Ñ‹Ð²Ð°Ð½Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¸Ð· Ñ„Ð°Ð¹Ð»Ð°
 int readFromFile(Facade* facade) {
-    FILE* file = fopen("äàííûå.txt", "r");
+    FILE* file = fopen("Ð´Ð°Ð½Ð½Ñ‹Ðµ.txt", "r");
     if (file == NULL) {
-        printf("Îøèáêà ïðè îòêðûòèè ôàéëà!");
+        printf("ÐžÑˆÐ¸Ð±ÐºÐ° Ð¿Ñ€Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚Ð¸Ð¸ Ñ„Ð°Ð¹Ð»Ð°!");
         return 0;
     }
 
-    if(fscanf(file, "Äëèíà ôàñàäà: %f ì\n", &facade->length) != 1) return 0;
-    if(fscanf(file, "Øèðèíà ôàñàäà: %f ì\n", &facade->width) != 1) return 0;
-    if(fscanf(file, "Âûñîòà ôàñàäà: %f ì\n", &facade->height) != 1) return 0;
-    if(fscanf(file, "Ïëîùàäü îêîí: %f ì^2\n", &facade->windowArea) != 1) return 0;
-    if(fscanf(file, "Ïëîùàäü äâåðåé: %f ì^2\n", &facade->doorArea) != 1) return 0;
-    if(fscanf(file, "Ðàñõîä øòóêàòóðêè íà ìåòð êâàäðàòíûé: %f êã/ì^2\n", &facade->plasterRate) != 1) return 0;
-    if(fscanf(file, "Îáùàÿ ïëîùàäü ôàñàäà: %f ì^2\n", &facade->facadeArea) != 1) return 0;
-    if(fscanf(file, "Íåîáõîäèìîå êîëè÷åñòâî øòóêàòóðêè â ìåøêàõ: %f ìåøêîâ\n", &facade->plasterBags) != 1) return 0;
-    if(fscanf(file, "Íåîáõîäèìîå êîëè÷åñòâî øòóêàòóðêè â ëèòðàõ: %f ë\n", &facade->plasterLiters) != 1) return 0;
-    if(fscanf(file, "Íåîáõîäèìîå êîëè÷åñòâî øòóêàòóðêè â êèëîãðàììàõ: %f êã\n", &facade->plasterKilograms) != 1) return 0;
+    if(fscanf(file, "Ð”Ð»Ð¸Ð½Ð° Ñ„Ð°ÑÐ°Ð´Ð°: %f Ð¼\n", &facade->length) != 1) return 0;
+    if(fscanf(file, "Ð¨Ð¸Ñ€Ð¸Ð½Ð° Ñ„Ð°ÑÐ°Ð´Ð°: %f Ð¼\n", &facade->width) != 1) return 0;
+    if(fscanf(file, "Ð’Ñ‹ÑÐ¾Ñ‚Ð° Ñ„Ð°ÑÐ°Ð´Ð°: %f Ð¼\n", &facade->height) != 1) return 0;
+    if(fscanf(file, "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ð¾ÐºÐ¾Ð½: %f Ð¼^2\n", &facade->windowArea) != 1) return 0;
+    if(fscanf(file, "ÐŸÐ»Ð¾Ñ‰Ð°Ð´ÑŒ Ð´Ð²ÐµÑ€ÐµÐ¹: %f Ð¼^2\n", &facade->doorArea) != 1) return 0;
+    if(fscanf(file, "Ð Ð°ÑÑ…Ð¾Ð´ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð½Ð° Ð¼ÐµÑ‚Ñ€ ÐºÐ²Ð°Ð´Ñ€Ð°Ñ‚Ð½Ñ‹Ð¹: %f ÐºÐ³/Ð¼^2\n", &facade->plasterRate) != 1) return 0;
+    if(fscanf(file, "ÐžÐ±Ñ‰Ð°Ñ Ð¿Ð»Ð¾Ñ‰Ð°Ð´ÑŒ Ñ„Ð°ÑÐ°Ð´Ð°: %f Ð¼^2\n", &facade->facadeArea) != 1) return 0;
+    if(fscanf(file, "ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð² Ð¼ÐµÑˆÐºÐ°Ñ…: %f Ð¼ÐµÑˆÐºÐ¾Ð²\n", &facade->plasterBags) != 1) return 0;
+    if(fscanf(file, "ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð² Ð»Ð¸Ñ‚Ñ€Ð°Ñ…: %f Ð»\n", &facade->plasterLiters) != 1) return 0;
+    if(fscanf(file, "ÐÐµÐ¾Ð±Ñ…Ð¾Ð´Ð¸Ð¼Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÑ‚ÑƒÐºÐ°Ñ‚ÑƒÑ€ÐºÐ¸ Ð² ÐºÐ¸Ð»Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð°Ñ…: %f ÐºÐ³\n", &facade->plasterKilograms) != 1) return 0;
 
     fclose(file);
     return 1;
