@@ -20,6 +20,9 @@ int inputData(Facade* facade);
 // Функция для расчета площади фасада без проемов
 float calculateFacadeArea(Facade* facade);
 
+// Функция для расчета площади фасада с учётом проемов
+float calculateNetFacadeArea(Facade* facade);
+
 // Функция для расчета необходимого количества штукатурки в мешках
 float calculatePlasterBags(Facade* facade);
 
@@ -111,20 +114,25 @@ float calculateFacadeArea(Facade* facade) {
     return (facade->length * facade->height) * 2 + (facade->width * facade->height) * 2;
 }
 
+float calculateNetFacadeArea(Facade* facade) {
+    return ((facade->length * facade->height) * 2 + (facade->width * facade->height) * 2) - facade->windowArea - facade->doorArea;
+}
+
 float calculatePlasterBags(Facade* facade) {
-    float totalArea = calculateFacadeArea(facade);
+    float totalArea = calculateNetFacadeArea(facade);
     float plasterArea = totalArea - (facade->windowArea + facade->doorArea);
     return plasterArea * facade->plasterRate;
 }
 
 float calculatePlasterKilograms(Facade* facade) {
-    return calculatePlasterBags(facade) * 25;
+    float bags = calculatePlasterBags(facade);
+    return bags * 25;
 }
 
 
 // Функция для вывода результатов
 void printResults(Facade* facade) {
-    printf("Общая площадь фасада: %.2f м^2\n", calculateFacadeArea(facade));
+    printf("Общая площадь фасада: %.2f м^2\n", calculateNetFacadeArea(facade));
     printf("Площадь фасада без проемов: %.2f м^2\n", calculateFacadeArea(facade));
     printf("Необходимое количество штукатурки в мешках: %.2f мешков\n", calculatePlasterBags(facade));
     printf("Необходимое количество штукатурки в литрах: %.2f л\n", calculatePlasterKilograms(facade));
